@@ -14,7 +14,8 @@ public class Fingnastics extends JFrame implements KeyListener, ActionListener {
 	private Controller derController;
 
 	public static void main(String[] args) {
-
+		////////////////////////////////////////////////// Anfang Swing
+		////////////////////////////////////////////////// (GUI)//////////////////////////////////////////////////
 		/* Use an appropriate Look and Feel */
 		try {
 			// UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
@@ -76,13 +77,17 @@ public class Fingnastics extends JFrame implements KeyListener, ActionListener {
 
 		displayArea = new JTextArea();
 		displayArea.setEditable(false);
+		displayArea.setLineWrap(true);
 		JScrollPane scrollPane = new JScrollPane(displayArea);
 		scrollPane.setPreferredSize(new Dimension(375, 125));
 
 		getContentPane().add(typingArea, BorderLayout.PAGE_START);
 		getContentPane().add(scrollPane, BorderLayout.CENTER);
 		getContentPane().add(button, BorderLayout.PAGE_END);
-		this.derController = new Controller(this);
+		///////////////////////////////////////////////// Ende
+		///////////////////////////////////////////////// Swing////////////////////////////////////////
+		this.derController = new Controller(this); // Am ende der Initalisierung der grafik elemente wird das Controller
+													// objekt erstellt
 	}
 
 	public Fingnastics(String name) {
@@ -129,7 +134,7 @@ public class Fingnastics extends JFrame implements KeyListener, ActionListener {
 	}
 
 	public void display(String pDisplay) {
-		displayArea.append(pDisplay + "\n");
+		displayArea.append(pDisplay);
 
 	}
 }

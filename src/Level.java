@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public abstract class Level {
+public abstract class Level {  //abstrakte klasse quasi bauplan für andere Level Klassen
 	private ArrayList<Integer> letters = new ArrayList();
 	private String message;
 

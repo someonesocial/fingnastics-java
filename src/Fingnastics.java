@@ -86,8 +86,8 @@ public class Fingnastics extends JFrame implements KeyListener, ActionListener {
 		getContentPane().add(button, BorderLayout.PAGE_END);
 		///////////////////////////////////////////////// Ende
 		///////////////////////////////////////////////// Swing////////////////////////////////////////
-		this.derController = new Controller(this); // Am ende der Initalisierung der grafik elemente wird das Controller
-													// objekt erstellt
+		derController = new Controller(this); // Am ende der Initalisierung der grafik elemente wird das Controller objekt erstellt
+													
 	}
 
 	public Fingnastics(String name) {
@@ -97,17 +97,18 @@ public class Fingnastics extends JFrame implements KeyListener, ActionListener {
 	}
 
 	@Override
-	public void keyPressed(KeyEvent k) {
+	public void keyPressed(KeyEvent k) {  // Wen taste gedrückt
 
-		if (!keys.contains(k.getKeyCode())) {
+		if (!keys.contains(k.getKeyCode())) { //schauen ob taste schon in Arraylist keys, wenn nicht hinzufügen
 			keys.add(k.getKeyCode());
 		}
-		this.derController.test();
+		derController.test();  // auruf der Test Funktin im Controller
 	}
 
 	@Override
-	public void keyReleased(KeyEvent k) {
-		if (keys.contains(k.getKeyCode())) {
+	public void keyReleased(KeyEvent k) { // Wen taste losgelassen
+
+		if (keys.contains(k.getKeyCode())) { //schauen ob taste schon in Arraylist keys, wenn ja entfernen
 			keys.remove(keys.indexOf(k.getKeyCode()));
 		}
 	}
@@ -129,11 +130,11 @@ public class Fingnastics extends JFrame implements KeyListener, ActionListener {
 	}
 
 	///////////////////////////////////////////////////////////////////////////////////
-	public ArrayList getKeys() {
+	public ArrayList getKeys() { //getter für arraylist keys
 		return keys;
 	}
 
-	public void display(String pDisplay) {
+	public void display(String pDisplay) { // Display funktion (erstatz für system.out.println)
 		displayArea.append(pDisplay);
 
 	}

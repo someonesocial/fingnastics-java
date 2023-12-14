@@ -1,7 +1,7 @@
 
 import java.util.ArrayList;
 
-public class Level1 extends Level {
+public class Level1 extends Level { // erbt von klasse Level
     private ArrayList<Integer> letters = new ArrayList();
     private String message = "\nLevel 1\nWillkommen bei Fingnastics,\ndrücken Sie die angebebene Taste!";
 
@@ -9,7 +9,7 @@ public class Level1 extends Level {
         addLetters();
     }
 
-    private void addLetters() {
+    private void addLetters() {  //zu arraylist letters hinzufügen
 
         letters.add(70); // f
 

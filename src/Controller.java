@@ -4,7 +4,7 @@ import java.util.List;
 import java.awt.event.KeyEvent;
 
 public class Controller {
-	private Fingnastics dasFingnastics;  //Objekt Fingnastics
+	private Fingnastics dasFingnastics;  //Objekt Fingnastics  
 	private Level dasLevel[];
 	private int currentLevel = 0;
 

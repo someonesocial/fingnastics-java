@@ -7,7 +7,7 @@ public class RandomLevel extends Level {
 
     public RandomLevel(int pAnzahl) {
         addLetters(pAnzahl);
-        message = "\nLevel n\nDrücken Sie die angebebenen Tasten!";
+        message = "Level n\nDrücken Sie die angebebenen Tasten!";
     }
 
     private void addLetters(int pAnzahl) {

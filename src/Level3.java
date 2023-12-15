@@ -4,7 +4,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class Level3 extends Level {
     private ArrayList<Integer> letters = new ArrayList();
-    private String message = "\nLevel 1\nDrücken Sie die angebebene Tasten gleichzeitig in der richtigen Reihenfolge!";
+    private String message = "Level 1\nDrücken Sie die angebebene Tasten gleichzeitig in der richtigen Reihenfolge!";
 
     public Level3() {
         addLetters();

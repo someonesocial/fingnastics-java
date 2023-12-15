@@ -3,7 +3,7 @@ import java.util.ArrayList;
 
 public class Level2 extends Level {
     private ArrayList<Integer> letters = new ArrayList();
-    private String message = "\nLevel 2\nDrücken Sie jetzt beide angebebene Tasten gleichzeitig!";
+    private String message = "Level 2\nDrücken Sie jetzt beide angebebene Tasten gleichzeitig!";
 
     public Level2() {
         addLetters();

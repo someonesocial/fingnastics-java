@@ -8,9 +8,10 @@ import javax.swing.*;
 
 public class Fingnastics extends JFrame implements KeyListener, ActionListener {
 	JTextArea displayArea;
-	
+
 	static final String newline = System.getProperty("line.separator");
 	private ArrayList keys = new ArrayList(); // This ArrayList will hold all the key codes of currently pressed keys.
+	private Character lastKey = null;
 	private Controller derController;
 
 	public static void main(String[] args) {
@@ -64,7 +65,6 @@ public class Fingnastics extends JFrame implements KeyListener, ActionListener {
 		JButton button = new JButton("Clear");
 		button.addActionListener(this);
 
-
 		displayArea = new JTextArea();
 		displayArea.setEditable(false);
 		displayArea.setLineWrap(true);
@@ -73,13 +73,13 @@ public class Fingnastics extends JFrame implements KeyListener, ActionListener {
 		JScrollPane scrollPane = new JScrollPane(displayArea);
 		scrollPane.setPreferredSize(new Dimension(375, 125));
 
-		
 		getContentPane().add(scrollPane, BorderLayout.CENTER);
 		getContentPane().add(button, BorderLayout.PAGE_END);
 		///////////////////////////////////////////////// Ende
 		///////////////////////////////////////////////// Swing////////////////////////////////////////
-		derController = new Controller(this); // Am ende der Initalisierung der grafik elemente wird das Controller objekt erstellt
-													
+		derController = new Controller(this); // Am ende der Initalisierung der grafik elemente wird das Controller
+												// objekt erstellt
+
 	}
 
 	public Fingnastics(String name) {
@@ -89,18 +89,22 @@ public class Fingnastics extends JFrame implements KeyListener, ActionListener {
 	}
 
 	@Override
-	public void keyPressed(KeyEvent k) {  // Wen taste gedrückt
+	public void keyPressed(KeyEvent k) { // Wen taste gedrückt
 
-		if (!keys.contains(k.getKeyCode())) { //schauen ob taste schon in Arraylist keys, wenn nicht hinzufügen
-			keys.add(k.getKeyCode());
+		if (lastKey == null || lastKey != k.getKeyChar()) {
+			lastKey = k.getKeyChar();
+			if (!keys.contains(k.getKeyCode())) { // schauen ob taste schon in Arraylist keys, wenn nicht hinzufügen
+				keys.add(k.getKeyCode());
+			}
+			derController.test(); // auruf der Test Funktin im Controller
 		}
-		derController.test();  // auruf der Test Funktin im Controller
 	}
 
 	@Override
 	public void keyReleased(KeyEvent k) { // Wen taste losgelassen
+		lastKey = null;
 
-		if (keys.contains(k.getKeyCode())) { //schauen ob taste schon in Arraylist keys, wenn ja entfernen
+		if (keys.contains(k.getKeyCode())) { // schauen ob taste schon in Arraylist keys, wenn ja entfernen
 			keys.remove(keys.indexOf(k.getKeyCode()));
 		}
 	}
@@ -115,14 +119,13 @@ public class Fingnastics extends JFrame implements KeyListener, ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		// Clear the text components.
 		displayArea.setText("");
-		
 
 		// Return the focus to the display area.
 		displayArea.requestFocusInWindow();
 	}
 
 	///////////////////////////////////////////////////////////////////////////////////
-	public ArrayList getKeys() { //getter für arraylist keys
+	public ArrayList getKeys() { // getter für arraylist keys
 		return keys;
 	}
 

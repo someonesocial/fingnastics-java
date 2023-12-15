@@ -39,12 +39,12 @@ public class Controller {
 																				 * ), dasModel.getLevel1())
 																				 */) { // Sind die beiden Listen gleich?
 
-			dasFingnastics.display("\n" + "richtig");
+			dasFingnastics.display("\n" + "richtig"+ "\n");
 			currentLevel++;
 			nextLevel();
 
 		} else
-			dasFingnastics.display("\n" + "falsch");
+			dasFingnastics.display("\n" + "falsch"+"\n");
 
 	}
 	/*

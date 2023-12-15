@@ -26,7 +26,7 @@ public class Controller {
 		} else {
 			dasFingnastics.display(dasLevel[currentLevel].getMessage() + "\n");
 			dasLevel[currentLevel].getLetters() //get arraylist von level objekt
-					.forEach((n) -> dasFingnastics.display(java.awt.event.KeyEvent.getKeyText((int) n))); // display alle Buchstaben dazu umwandlung von keycodes in text
+					.forEach((n) -> dasFingnastics.display(java.awt.event.KeyEvent.getKeyText((int) n)+ " ")); // display alle Buchstaben dazu umwandlung von keycodes in text
 
 		}
 	}

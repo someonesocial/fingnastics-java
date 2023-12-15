@@ -1,15 +1,15 @@
 public class Controller {
 
 	// globale Variablen
-	private Fingnastics dasFingnastics;  //Objekt Fingnastics  
+	private Fingnastics dasFingnastics; // Objekt Fingnastics
 	private Level dasLevel[];
 	private int currentLevel = 0;
 
-	public Controller(Fingnastics pFingnastics) {  // constructor für Klasse Controller
+	public Controller(Fingnastics pFingnastics) { // constructor für Klasse Controller
 		dasFingnastics = pFingnastics; // Objekt referenz von Fingnastics Objekt
 		dasLevel = new Level[5]; // Level-Objekt array
 
-		//Objekte der Level werden erstellt
+		//Instanzierung von Objekte
 		dasLevel[0] = new Level1();
 		dasLevel[1] = new Level2();
 		dasLevel[2] = new Level3();
@@ -22,35 +22,37 @@ public class Controller {
 		if (currentLevel >= 4) {
 			dasFingnastics.actionPerformed(null);
 			dasFingnastics.display("\nGratulation, sie haben alle Level geschaft!");
-			
+
 		} else {
 			dasFingnastics.display(dasLevel[currentLevel].getMessage() + "\n");
-			dasLevel[currentLevel].getLetters() //get arraylist von level objekt
-					.forEach((n) -> dasFingnastics.display(java.awt.event.KeyEvent.getKeyText((int) n))); // display alle Buchstaben dazu umwandlung von keycodes in text
+			dasLevel[currentLevel].getLetters() // get arraylist von level objekt
+					.forEach((n) -> dasFingnastics.display(java.awt.event.KeyEvent.getKeyText((int) n) + " ")); // display
+																												// alle
+																												// Buchstaben
+																												// dazu
+																												// umwandlung
+																												// von
+																												// keycodes
+																												// in
+																												// text
 
 		}
 	}
 
-	public void test() { //checken ob die alle tasten gedrückt sind
-	
+	public void test() { // checken ob die alle tasten gedrückt sind
+
 		if (dasFingnastics.getKeys().equals(dasLevel[currentLevel].getLetters())/*
 																				 * listEqualsIgnoreOrder(dasFingnastics.
 																				 * getKeys(
 																				 * ), dasModel.getLevel1())
 																				 */) { // Sind die beiden Listen gleich?
 
-			dasFingnastics.display("\n" + "richtig"+ "\n");
+			dasFingnastics.display("\n" + "richtig" + "\n");
 			currentLevel++;
 			nextLevel();
 
 		} else
-			dasFingnastics.display("\n" + "falsch"+"\n");
+			dasFingnastics.display("\n" + "falsch" + "\n");
 
 	}
-	/*
-	 * public static <T> boolean listEqualsIgnoreOrder(List<T> list1, List<T> list2)
-	 * { //Adaptiert als Set damit reihenfolge egal
-	 * return new HashSet<>(list1).equals(new HashSet<>(list2));
-	 * }
-	 */
 }

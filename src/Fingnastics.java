@@ -43,10 +43,7 @@ public class Fingnastics extends JFrame implements KeyListener, ActionListener {
 		});
 	}
 
-	/**
-	 * Create the GUI and show it. For thread safety, this method should be invoked
-	 * from the event-dispatching thread.
-	 */
+	//Erzeugt die GUI und zeigt diese an. 
 	private static void createAndShowGUI() {
 		// Create and set up the window.
 		Fingnastics frame = new Fingnastics("KeyEventDemo");

@@ -9,7 +9,7 @@ public class Level1 extends Level { // erbt von klasse Level
         addLetters();
     }
 
-    private void addLetters() {  //zu arraylist letters hinzufügen
+    private void addLetters() { // zu arraylist letters hinzufügen
 
         letters.add(70); // f
 

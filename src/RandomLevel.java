@@ -30,9 +30,6 @@ public class RandomLevel extends Level {
             } while (letters.contains(myKeycodes[x])); // schauen ob schon in liste weil taste zweimal drücken geht
                                                        // nicht ;)
             letters.add(myKeycodes[x]); // hinzufügen
-                x = ThreadLocalRandom.current().nextInt(65, 90 + 1);  // zufalls Keycode erzeugen
-            } while (letters.contains(x));  
-            letters.add(x); 
         }
 
     }

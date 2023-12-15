@@ -1,33 +1,42 @@
 import java.util.ArrayList;
 import java.util.concurrent.ThreadLocalRandom;
 
+//Klasse "RandomLevel" erbt von der Elternklasse "Level"
 public class RandomLevel extends Level {
+
     private ArrayList<Integer> letters = new ArrayList();
     private String message;
 
+    //Konsturktor der Klasse -> ruft initial die addLeters()-Methode auf
     public RandomLevel(int pAnzahl) {
         addLetters(pAnzahl);
         message = "Level n\nDrücken Sie die angebebenen Tasten!";
     }
 
+    //Methode welche die ArrayList: "letters" mit zufälligen "Zahlencodes" füllt.
+    //Mitgabe-Parameter stellt die Anzahl der Level dar, die es geben soll.
     private void addLetters(int pAnzahl) {
 
+        //Solange die Anzahl der Level kleiner ist..
         for (int i = 0; i < pAnzahl; i++) {
             int x;
-
+            
+            //Erzeuge solange eine Zufallszahl, bis eine Zahl gefunden wird, die nicht in der ArrayList "letters" enthalten ist
+            //verhindert das man gleichzeitig zweimal dieselbe Taste drücken muss
             do {
-                x = ThreadLocalRandom.current().nextInt(65, 90 + 1);  // zufalls Keycode erfinden 
-            } while (letters.contains(x));  // schauen ob schon in liste weil taste zweimal drücken geht nicht ;)
-            letters.add(x); // hinzufügen
+                x = ThreadLocalRandom.current().nextInt(65, 90 + 1);  // zufalls Keycode erzeugen
+            } while (letters.contains(x));  
+            letters.add(x); 
         }
 
     }
 
+    //Getter der die ArrayList "letters" zurückgibt
     public ArrayList getLetters() {
-
         return letters;
     }
 
+    //Getter welche die "message" zurückgibt 
     public String getMessage() {
         return message;
     }

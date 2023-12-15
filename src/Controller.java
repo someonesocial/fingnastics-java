@@ -9,7 +9,7 @@ public class Controller {
 		dasFingnastics = pFingnastics; // Objekt referenz von Fingnastics Objekt
 		dasLevel = new Level[5]; // Level-Objekt array
 
-		//Objekte der Level werden erstellt
+		//Instanzierung von Objekte
 		dasLevel[0] = new Level1();
 		dasLevel[1] = new Level2();
 		dasLevel[2] = new Level3();
@@ -47,10 +47,4 @@ public class Controller {
 			dasFingnastics.display("\n" + "falsch"+"\n");
 
 	}
-	/*
-	 * public static <T> boolean listEqualsIgnoreOrder(List<T> list1, List<T> list2)
-	 * { //Adaptiert als Set damit reihenfolge egal
-	 * return new HashSet<>(list1).equals(new HashSet<>(list2));
-	 * }
-	 */
 }

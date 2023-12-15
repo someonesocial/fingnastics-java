@@ -1,11 +1,16 @@
 import java.util.ArrayList;
 
-public abstract class Level {  //abstrakte klasse quasi bauplan für andere Level Klassen
+//Abstrakte Klasse "Level" -> dabei ist dies eine Elternklasse von der aus veerbt werden kann
+//Ermöglicht es, verschiedene Kindklassen mit der selben Funktionalität zu erstellen.
+
+public abstract class Level {  
+
+	//Private Variablen 
 	private ArrayList<Integer> letters = new ArrayList();
 	private String message;
 
+	//Abstrakte Methoden 
 	public abstract String getMessage();
-
 	public abstract ArrayList getLetters();
 
 }

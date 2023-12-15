@@ -20,7 +20,9 @@ public class Controller {
 
 	public void nextLevel() { // display für das nächste level auf
 		if (currentLevel >= 4) {
+			dasFingnastics.actionPerformed(null);
 			dasFingnastics.display("\nGratulation, sie haben alle Level geschaft!");
+			
 		} else {
 			dasFingnastics.display(dasLevel[currentLevel].getMessage() + "\n");
 			dasLevel[currentLevel].getLetters() //get arraylist von level objekt

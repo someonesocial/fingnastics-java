@@ -8,7 +8,7 @@ import javax.swing.*;
 
 public class Fingnastics extends JFrame implements KeyListener, ActionListener {
 	JTextArea displayArea;
-	JTextField typingArea;
+	
 	static final String newline = System.getProperty("line.separator");
 	private ArrayList keys = new ArrayList(); // This ArrayList will hold all the key codes of currently pressed keys.
 	private Controller derController;
@@ -64,24 +64,16 @@ public class Fingnastics extends JFrame implements KeyListener, ActionListener {
 		JButton button = new JButton("Clear");
 		button.addActionListener(this);
 
-		typingArea = new JTextField(20);
-		typingArea.addKeyListener(this);
-
-		// Uncomment this if you wish to turn off focus
-		// traversal. The focus subsystem consumes
-		// focus traversal keys, such as Tab and Shift Tab.
-		// If you uncomment the following line of code, this
-		// disables focus traversal and the Tab events will
-		// become available to the key event listener.
-		typingArea.setFocusTraversalKeysEnabled(false);
 
 		displayArea = new JTextArea();
 		displayArea.setEditable(false);
 		displayArea.setLineWrap(true);
+		displayArea.addKeyListener(this);
+		displayArea.setFocusTraversalKeysEnabled(false);
 		JScrollPane scrollPane = new JScrollPane(displayArea);
 		scrollPane.setPreferredSize(new Dimension(375, 125));
 
-		getContentPane().add(typingArea, BorderLayout.PAGE_START);
+		
 		getContentPane().add(scrollPane, BorderLayout.CENTER);
 		getContentPane().add(button, BorderLayout.PAGE_END);
 		///////////////////////////////////////////////// Ende
@@ -123,10 +115,10 @@ public class Fingnastics extends JFrame implements KeyListener, ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		// Clear the text components.
 		displayArea.setText("");
-		typingArea.setText("");
+		
 
-		// Return the focus to the typing area.
-		typingArea.requestFocusInWindow();
+		// Return the focus to the display area.
+		displayArea.requestFocusInWindow();
 	}
 
 	///////////////////////////////////////////////////////////////////////////////////

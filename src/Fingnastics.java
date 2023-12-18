@@ -88,10 +88,10 @@ public class Fingnastics extends JFrame implements KeyListener, ActionListener {
 	@Override
 	public void keyPressed(KeyEvent k) { // Wen taste gedrückt
 
-		if (lastKey == null || lastKey != k.getKeyChar()) {
+		if (lastKey == null || lastKey != k.getKeyChar()) { // zur Verhiderung von Wiederholungen bei dauerhaft gedrückten Tasten
 			lastKey = k.getKeyChar();
 			if (!keys.contains(k.getKeyCode())) { // schauen ob taste schon in Arraylist keys, wenn nicht hinzufügen
-				keys.add(k.getKeyCode());
+				keys.add(k.getKeyCode()); //wir verwenden die keycodes weil dies unabhängig von Sprache und Betiebssystem sind
 			}
 			derController.test(); // auruf der Test Funktin im Controller
 		}

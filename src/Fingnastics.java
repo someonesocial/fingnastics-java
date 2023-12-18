@@ -46,7 +46,7 @@ public class Fingnastics extends JFrame implements KeyListener, ActionListener {
 	//Erzeugt die GUI und zeigt diese an. 
 	private static void createAndShowGUI() {
 		// Create and set up the window.
-		Fingnastics frame = new Fingnastics("KeyEventDemo");
+		Fingnastics frame = new Fingnastics("Fingnastics");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		// Set up the content pane.

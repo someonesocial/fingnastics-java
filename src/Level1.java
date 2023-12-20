@@ -8,10 +8,11 @@ public class Level1 extends Level { // Level1 erbt hier alle Methoden und Eigens
     private String message = "Level 1\nWillkommen bei Fingnastics,\ndrücken Sie die angebebene Taste!"; //message ist eine Zeichenkette (String) die eine Nachricht enthält.
 
     public Level1() {
-        addLetters();
+        addLetters();//Ruft beim Erstellen eines Objektes dieser Klasse die private Methode addLetters auf
     }
 
     //Funktion ohne Rückgabewert, die der ArrayList: "letters" den Zahlenwert: 70 hinzufügt, dieser stellt ein "F" dar.
+
     private void addLetters() {  
         letters.add(70); // diese Methode fügt der ArrayList 'letters' den Wert 70 hinzu, der in diesem Fall dem Buchstaben F entspricht.
     }

@@ -17,7 +17,7 @@ public class Controller {
 		dasLevel[4] = new RandomLevel(5);
 		nextLevel();
 	}
-
+// Hier wurde bissl was angepasst
 	public void nextLevel() { // display für das nächste level auf
 		if (currentLevel >= 5) {
 			dasFingnastics.actionPerformed(null);
